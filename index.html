@@ -42,21 +42,21 @@
 <body>
   <div id="typingBox"></div>
 
-  <script>
-    const message = "👋 Hello! This is a typing effect. Watch the message appear...";
-    let index = 0;
-    const typingDiv = document.getElementById('typingBox');
+<script>
+  const message = "👋 Hello! This is a typing effect. Watch the message appear...";
+  let index = 0;
+  const typingDiv = document.getElementById('typingBox');
 
-    function type() {
-      if (index < message.length) {
-        typingDiv.textContent += message[index];
-        index++;
-        setTimeout(type, 40); // typing speed
-      }
+  function type() {
+    if (index < message.length) {
+      typingDiv.textContent += message[index];
+      index++;
+      setTimeout(type, 40); // typing speed
     }
+  }
 
-    alert("✨ Welcome! The typing will begin now...");
-    type();
-  </script>
+  alert("✨ Welcome! The typing will begin now...");
+  type(); // No arguments!
+</script>
 </body>
 </html>
