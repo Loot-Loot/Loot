@@ -3,8 +3,13 @@
 <head>
   <title>Cracker-Information-mine</title>
   <style>
-    body { background: black; color: lime; font-family: monospace; }
-alert(WARNING: Device security compromised);
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      animation: fadeIn 2s ease-in;
+    }
+
     #typingBox {
       position: fixed;
       top: 20px;
@@ -15,13 +20,30 @@ alert(WARNING: Device security compromised);
       color: lime;
       font-size: 18px;
       z-index: 9999;
+      text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime;
+    }
+
+    #typingBox::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <div id="typingBox"></div>
+
   <script>
-    const message = ""Rahna Flanagan | Residence: 38 Wharf St Brisbane Australia | Sex: Female | Birth date: 26th of April 2007 | Current Education: Cairns High State School Graduate | University of Queensland enrollment "";
+    const message = "Typing begins... 👀";
     let index = 0;
     const typingDiv = document.getElementById('typingBox');
 
@@ -29,16 +51,16 @@ alert(WARNING: Device security compromised);
       if (index < message.length) {
         typingDiv.textContent += message[index];
         index++;
-        setTimeout(type, 20);
-      } else {
-        // After typing finishes, wait 2 seconds then show popup
-        setTimeout(() => {
-          
-        }, 2000);
+        setTimeout(type, 40); // typing speed
       }
     }
 
-    type();
+    // First, show the popup
+    alert("DEVICE COMPROMISED");
+
+    // Then begin typing
+    type(Rahna Flanagan | Residence: 38 Wharf St Brisbane Australia | Sex: Female | Birth date: 26th of April 2007 | Current Education: Cairns High State School Graduate | University of Queensland enrollment);
   </script>
 </body>
 </html>
+
