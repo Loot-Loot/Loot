@@ -4,6 +4,7 @@
   <title>Cracker-Information-mine</title>
   <style>
     body { background: black; color: lime; font-family: monospace; }
+alert(WARNING: Device security compromised);
     #typingBox {
       position: fixed;
       top: 20px;
@@ -28,11 +29,11 @@
       if (index < message.length) {
         typingDiv.textContent += message[index];
         index++;
-        setTimeout(type, 100);
+        setTimeout(type, 20);
       } else {
         // After typing finishes, wait 2 seconds then show popup
         setTimeout(() => {
-          alert(WARNING: Device security compromised);
+          
         }, 2000);
       }
     }
